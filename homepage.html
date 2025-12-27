@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, #0a0f24, #021b33);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        header {
+            background: rgba(0, 255, 255, 0.2);
+            border-bottom: 2px solid cyan;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0px 0px 20px cyan;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            text-transform: uppercase;
+            animation: glow 1.5s infinite alternate;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: cyan;
+            background: rgba(0, 255, 255, 0.1);
+            padding: 12px 20px;
+            margin: 0 10px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            border: 1px solid cyan;
+            transition: 0.3s ease-in-out;
+        }
+        nav a:hover {
+            background: cyan;
+            color: #021b33;
+            box-shadow: 0px 0px 20px cyan;
+        }
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+        }
+        .container h2 {
+            font-size: 2em;
+            background: linear-gradient(90deg, cyan, #00ffcc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            text-decoration: none;
+            color: white;
+            background: cyan;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            display: inline-block;
+            margin-top: 30px;
+            box-shadow: 0px 0px 20px cyan;
+            transition: 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            background: #00ffcc;
+            box-shadow: 0px 0px 40px #00ffcc;
+            transform: scale(1.1);
+        }
+        footer {
+            background: rgba(0, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            border-top: 2px solid cyan;
+            box-shadow: 0px 0px 20px cyan;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        /* Floating Neon Particles */
+        .floating {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: cyan;
+            box-shadow: 0px 0px 20px cyan;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 6s infinite alternate ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(0px) scale(1); }
+            100% { transform: translateY(-20px) translateX(10px) scale(1.2); }
+        }
+        @keyframes glow {
+            0% { text-shadow: 0px 0px 10px cyan; }
+            100% { text-shadow: 0px 0px 25px cyan; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Diabetes Prediction System</h1>
+    </header>
+    <nav>
+        <a href="homepage.html">Home</a>
+        <a href="predictnow.html">Predict Now</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="contactus.html">Contact</a>
+    </nav>
+    <div class="container">
+        <h2>Stay Healthy, Stay Aware</h2>
+        <p>Our system helps you predict diabetes based on your health data. Early detection is key!</p>
+        <a href="predictnow.html" class="cta-button">Get Started</a>
+        
+        <!-- Floating Particles -->
+        <div class="floating" style="top: 20%; left: 10%;"></div>
+        <div class="floating" style="top: 30%; right: 15%;"></div>
+        <div class="floating" style="bottom: 40%; left: 5%;"></div>
+        <div class="floating" style="bottom: 20%; right: 10%;"></div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Diabetes Prediction System | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

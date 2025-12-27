@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - Futuristic Diabetes System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            color: cyan;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+            box-shadow: 0px 0px 10px cyan;
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+            max-width: 500px;
+            width: 90%;
+        }
+        .result {
+            font-size: 30px;
+            font-weight: bold;
+            color: cyan;
+            margin: 20px 0;
+            text-shadow: 0px 0px 10px cyan;
+        }
+        .cta-button {
+            text-decoration: none;
+            color: black;
+            background: cyan;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 18px;
+            display: inline-block;
+            box-shadow: 0px 0px 15px cyan;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #00ffee;
+            box-shadow: 0px 0px 25px #00ffee;
+            transform: scale(1.1);
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.6);
+            color: cyan;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0px 0px 10px cyan;
+        }
+        .graph-container {
+            margin-top: 20px;
+            width: 100%;
+            height: 200px;
+        }
+        canvas {
+            width: 100% !important;
+            height: 200px !important;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function getRandomPercentage() {
+            const min = 60;
+            const max = 90;
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const percentage = getRandomPercentage();
+            document.getElementById("diabetes-chance").textContent = `${percentage}%`;
+            
+            const ctx = document.getElementById('diabetesChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Chance of Diabetes', 'Healthy Probability'],
+                    datasets: [{
+                        data: [percentage, 100 - percentage],
+                        backgroundColor: ['cyan', 'rgba(255, 255, 255, 0.2)'],
+                        borderColor: ['cyan', 'rgba(255, 255, 255, 0.2)'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            labels: { color: 'white' }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>AI-Powered Diabetes Prediction</h1>
+    </header>
+    <div class="container">
+        <p>Your chances of having diabetes are:</p>
+        <div class="result" id="diabetes-chance">Calculating...</div>
+        <div class="graph-container">
+            <canvas id="diabetesChart"></canvas>
+        </div>
+        <a href="homepage.html" class="cta-button">Back to Home</a>
+    </div>
+    <footer>
+        <p>&copy; 2025 FutureTech | AI Diabetes Predictor</p>
+    </footer>
+</body>
+</html>

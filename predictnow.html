@@ -1,0 +1,144 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Now - Diabetes Prediction System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: #0ff;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: rgba(0, 114, 198, 0.8);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            text-transform: uppercase;
+            box-shadow: 0px 0px 20px #0ff;
+        }
+        
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px #0ff;
+            backdrop-filter: blur(10px);
+            animation: float 3s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        h2 {
+            color: #0ff;
+            text-align: center;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #0ff;
+        }
+        
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #0ff;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        button {
+            background: #0ff;
+            color: black;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        
+        button:hover {
+            background: white;
+            color: black;
+            box-shadow: 0px 0px 15px #0ff;
+        }
+        
+        .glowing-box {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0px 0px 30px #0ff;
+            border-radius: 50%;
+            animation: moveAround 10s infinite alternate ease-in-out;
+        }
+        
+        @keyframes moveAround {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(50vw, 50vh); }
+            100% { transform: translate(-50vw, -50vh); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Predict Now</h1>
+    </header>
+    <div class="container">
+        <h2>Enter Your Details</h2>
+        <form action="predicted.html" method="GET">
+            <label for="pregnancies">Pregnancies</label>
+            <input type="number" id="pregnancies" name="pregnancies" required>
+
+            <label for="glucose">Glucose</label>
+            <input type="number" id="glucose" name="glucose" required>
+
+            <label for="bloodpressure">Blood Pressure</label>
+            <input type="number" id="bloodpressure" name="bloodpressure" required>
+
+            <label for="skinthickness">Skin Thickness</label>
+            <input type="number" id="skinthickness" name="skinthickness" required>
+
+            <label for="insulin">Insulin</label>
+            <input type="number" id="insulin" name="insulin" required>
+
+            <label for="bmi">BMI</label>
+            <input type="number" step="0.1" id="bmi" name="bmi" required>
+
+            <label for="diabetespedigree">Diabetes Pedigree Function</label>
+            <input type="number" step="0.01" id="diabetespedigree" name="diabetespedigree" required>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+    
+    <div class="glowing-box" style="top: 10%; left: 10%;"></div>
+    <div class="glowing-box" style="top: 70%; left: 50%;"></div>
+    <div class="glowing-box" style="top: 40%; left: 80%;"></div>
+</body>
+</html>
